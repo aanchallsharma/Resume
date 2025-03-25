@@ -23,7 +23,12 @@ header {
 header h2 {
     margin: 0;
     font-size: 24px;
+}
+
+h2 a{
     color: #333;
+    text-decoration: none;
+
 }
 
 header h2 span {
@@ -42,6 +47,10 @@ nav a:hover {
     color: rgb(238, 163, 2);
 }
 
+nav a.active {
+    font-weight: 600;
+    color: rgb(238, 163, 2); 
+}
 nav a + a::before{
     content: "|";
     color: #333;
