@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 body {
     font-family: "Work Sans", sans-serif;
     margin: 0;
@@ -17,9 +16,6 @@ header {
     padding: 20px 50px;
 }
 
-
-
-
 header h2 {
     margin: 0;
     font-size: 24px;
@@ -28,7 +24,6 @@ header h2 {
 h2 a{
     color: #333;
     text-decoration: none;
-
 }
 
 header h2 span {
@@ -37,7 +32,7 @@ header h2 span {
 }
 
 nav a {
-    margin: 0 ;
+    margin: 0;
     text-decoration: none;
     color: #333;
     font-size: 16px;
@@ -51,12 +46,12 @@ nav a.active {
     font-weight: 600;
     color: rgb(238, 163, 2); 
 }
-nav a + a::before{
+
+nav a + a::before {
     content: "|";
     color: #333;
     padding: 2rem;
 }
-
 
 .project-grid {
     display: flex;
@@ -78,12 +73,13 @@ nav a + a::before{
     align-items: center;
 }
 
+/* Alternate direction for even projects */
 .project-item:nth-child(even) {
     flex-direction: row-reverse;
 }
 
 .project-item img {
-    flex: 0.6;
+    flex: 1;
     width: 100%;
     height: auto;
     border-radius: 10px;
@@ -91,7 +87,10 @@ nav a + a::before{
 }
 
 .project-content {
-    flex: 0.4;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project-content h3 {
@@ -105,16 +104,36 @@ nav a + a::before{
     color: #555;
 }
 
+.github-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.github-link i {
+    margin-right: 8px;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.github-link:hover {
+    color: #4078c0;
+    text-decoration: underline;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .project-item {
-        flex-direction: column;
+        flex-direction: column; /* Stack image and content */
         text-align: center;
         align-items: center;
     }
 
     .project-item:nth-child(even) {
-        flex-direction: column ;
+        flex-direction: column; /* Ensure even projects are stacked too */
     }
 
     .project-content {
@@ -123,9 +142,9 @@ nav a + a::before{
 
     .project-item img {
         width: 100%;
+        height: auto; /* Allow image to resize */
     }
 }
-
 
 /* Footer */
 footer {
@@ -144,11 +163,11 @@ footer a {
 }
 
 footer i {
-    font-size: 30px; 
+    font-size: 30px;
 }
 
 footer i:hover {
-    color:  #00acc1; 
+    color:  #00acc1;
 }
 
 footer a:hover {
